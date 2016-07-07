@@ -16,7 +16,7 @@
 
   "autoload": {
     "psr-4": {
-      "luoyangpeng\\action-log\\": "src/"
+      "luoyangpeng\\ActionLog\\": "src/"
     }
   },
   "minimum-stability": "dev"
