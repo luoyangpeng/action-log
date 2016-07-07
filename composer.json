@@ -1,0 +1,23 @@
+{
+  "name": "luoyangpeng/ActionLog",
+  "description": "A laravel package of ActionLog",
+  "keywords": ["laravel","ActionLog"],
+
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "luoyangpeng",
+      "email": "luoyangpeng1122@163.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "luoyangpeng\\ActionLog\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
