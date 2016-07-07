@@ -1,5 +1,5 @@
 {
-  "name": "luoyangpeng/ActionLog",
+  "name": "luoyangpeng/action-log",
   "description": "A laravel package of ActionLog",
   "keywords": ["laravel","ActionLog"],
 
@@ -16,7 +16,7 @@
 
   "autoload": {
     "psr-4": {
-      "luoyangpeng\\ActionLog\\": "src/"
+      "luoyangpeng\\action-log\\": "src/"
     }
   },
   "minimum-stability": "dev"
