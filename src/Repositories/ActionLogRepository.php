@@ -1,8 +1,6 @@
 <?php
 namespace luoyangpeng\ActionLog\Repositories;
 
-use luoyangpeng\ActionLog\Models;
-
 class ActionLogRepository {
 
 
@@ -13,10 +11,17 @@ class ActionLogRepository {
      * @param ActionLog $actionLog
      * @return bool
      */
-    public function createActionLog($type,$content,ActionLog $actionLog)
+    public function createActionLog($type,$content)
     {
-        $actionLog->uid = auth()->user()->id;
-        $actionLog->name = auth()->user()->name;
+		$actionLog = new \luoyangpeng\ActionLog\Models\ActionLog();
+    	if(auth()->check()){
+    		$actionLog->uid = auth()->user()->id;
+    		$actionLog->username = auth()->user()->name;
+    	}else{
+    		$actionLog->uid=0;
+    		$actionLog->username ="访客";
+    	}
+       
         $actionLog->ip = request()->getClientIp();
         $actionLog->type = $type;
         $actionLog->content = $content;
