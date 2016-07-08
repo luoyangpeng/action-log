@@ -87,7 +87,7 @@ run:
 ```$ php artisan migrate```
 
 ## Demo
-
+自动记录操作日志，数据库操作需按如下:
 ```php
 
 update
@@ -107,5 +107,16 @@ delete
 Users:destroy(1);
 
 ```
+
+主动记录操作日志
+
+```php
+
+use ActionLog
+
+ActionLog::createActionLog($type,$content);
+
+```
+
 
 
