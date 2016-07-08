@@ -5,7 +5,7 @@ Laravel 5 操作日志自动记录
 ## Installation
 
 The ActionLog Service Provider can be installed via [Composer](http://getcomposer.org) by requiring the
-`mews/captcha` package and setting the `minimum-stability` to `dev` (required for Laravel 5) in your
+`luoyangpeng/action-log` package and setting the `minimum-stability` to `dev` (required for Laravel 5) in your
 project's `composer.json`.
 
 ```json
@@ -31,10 +31,10 @@ In Windows, you'll need to include the GD2 DLL `php_gd2.dll` as an extension in 
 
 ## Usage
 
-To use the Captcha Service Provider, you must register the provider when bootstrapping your Laravel application. There are
+To use the ActionLog Service Provider, you must register the provider when bootstrapping your Laravel application. There are
 essentially two ways to do this.
 
-Find the `providers` key in `config/app.php` and register the Captcha Service Provider.
+Find the `providers` key in `config/app.php` and register the ActionLog Service Provider.
 
 ```php
     'providers' => [
@@ -82,4 +82,5 @@ To use your own settings, publish config.
 		'\App\Models\Users',
 	];
 ```
-
+## Last Step
+```$ php artisan migrate``
