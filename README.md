@@ -12,7 +12,7 @@ project's `composer.json`.
 {
     "require": {
        
-        "luoyangpeng/action-log": "dev-master"
+        "luoyangpeng/action-log": "~1.0"
     },
    
 }
@@ -22,7 +22,7 @@ or
 
 Require this package with composer:
 ```
-composer require luoyangpeng/action-log dev-master
+composer require luoyangpeng/action-log 
 ```
 
 Update your packages with ```composer update``` or install with ```composer install```.
