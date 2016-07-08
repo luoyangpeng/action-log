@@ -1,6 +1,7 @@
 <?php
 namespace luoyangpeng\ActionLog\Repositories;
 
+use luoyangpeng\ActionLog\Services\clientService;
 class ActionLogRepository {
 
 
@@ -13,7 +14,7 @@ class ActionLogRepository {
      */
     public function createActionLog($type,$content)
     {
-		$actionLog = new \luoyangpeng\ActionLog\Models\ActionLog();
+    	$actionLog = new \luoyangpeng\ActionLog\Models\ActionLog();
     	if(auth()->check()){
     		$actionLog->uid = auth()->user()->id;
     		$actionLog->username = auth()->user()->name;
@@ -21,7 +22,8 @@ class ActionLogRepository {
     		$actionLog->uid=0;
     		$actionLog->username ="访客";
     	}
-       
+       	$actionLog->browser = clientService::getBrowser($_SERVER['HTTP_USER_AGENT'],true);
+       	$actionLog->system = clientService::getPlatForm($_SERVER['HTTP_USER_AGENT'],true);
         $actionLog->ip = request()->getClientIp();
         $actionLog->type = $type;
         $actionLog->content = $content;

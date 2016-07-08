@@ -17,6 +17,8 @@ class CrateActionLogTable extends Migration
             $table->string("uid")->comment("用户id");
             $table->string("username")->comment("姓名");
             $table->string("type","50")->comment("操作类型");
+            $table->string("browser",150)->comment("浏览器");
+            $table->string("system",50)->comment("操作系统");
             $table->string("ip","50")->comment("操作者ip");
             $table->string("content")->comment("操作描述");
 
