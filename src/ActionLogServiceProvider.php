@@ -26,25 +26,25 @@ class ActionLogServiceProvider extends ServiceProvider
         ], 'config');
 
         $model = config("actionlog");
-
-	    if($model){
-				foreach($model as $k => $v) {
-					
-					$v::updated(function($data){
-							ActionLog::createActionLog('update',"更新的id:".$data->id);
-						});
-					
-					$v::saved(function($data){
-						ActionLog::createActionLog('add',"添加的id:".$data->id);
-					});
-					
-					$v::deleted(function($data){
-						ActionLog::createActionLog('delete',"删除的id:".$data->id);
-		
-					});
+		if($model){
+			foreach($model as $k => $v) {
 				
-				}
+			$v::updated(function($data){
+					ActionLog::createActionLog('update',"更新的id:".$data->id);
+				});
+			
+			$v::saved(function($data){
+				ActionLog::createActionLog('add',"添加的id:".$data->id);
+			});
+			
+			$v::deleted(function($data){
+				ActionLog::createActionLog('delete',"删除的id:".$data->id);
+
+			});
+			
 			}
+		}
+        
 
     }
 
