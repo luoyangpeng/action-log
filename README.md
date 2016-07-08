@@ -83,4 +83,29 @@ To use your own settings, publish config.
 	];
 ```
 ## Last Step
-```$ php artisan migrate``
+run:
+```$ php artisan migrate```
+
+## Demo
+
+```php
+
+update
+
+$users = Users::find(1);
+$users->name = "myname";
+$users->save();
+
+add
+
+$users = new Users();
+$users->name = "myname";
+$users->save()
+
+delete
+
+Users:destroy(1);
+
+```
+
+
